@@ -1,0 +1,246 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(to right,#fff0f5,#ffe4ec);
+  color:#333;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(90deg,#ff69b4,#ff1493);
+  color:white;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+header h1{
+  font-size:28px;
+  font-weight:700;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ffe4ec;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+  url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796');
+  background-size:cover;
+  background-position:center;
+  height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+.hero h2{
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:20px;
+  margin-bottom:25px;
+}
+
+.btn{
+  background:#ff1493;
+  color:white;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:white;
+  color:#ff1493;
+  transform:scale(1.05);
+}
+
+.section{
+  padding:70px 50px;
+}
+
+.section h2{
+  text-align:center;
+  color:#ff1493;
+  margin-bottom:50px;
+  font-size:32px;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.product-card{
+  background:white;
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
+
+.product-card:hover{
+  transform:translateY(-10px);
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.price{
+  color:#ff1493;
+  font-weight:700;
+  margin:10px 0;
+}
+
+/* CATEGORY */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:35px;
+}
+
+/* FILTER BUTTONS */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filter-buttons label {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background: #ff1493;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.filter-buttons label:hover {
+  background: white;
+  color: #ff1493;
+}
+
+.category-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.category-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.category-card:hover img{
+  transform:scale(1.1);
+}
+
+.category-card h3{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  color:white;
+  font-size:24px;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  text-align:center;
+  margin-top:40px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+  }
+  nav{
+    margin-top:20px;
+  }
+  .hero h2{
+    font-size:32px;
+  }
+}
+/* Hide all products initially */
+.product-item {
+  display: none;
+}
+
+/* Show all when "All" selected */
+#all:checked ~ .products .product-item {
+  display: block;
+}
+
+/* Show skincare */
+#skincare:checked ~ .products .skincare {
+  display: block;
+}
+
+/* Show makeup */
+#makeup:checked ~ .products .makeup {
+  display: block;
+}
+
+/* Show haircare */
+#haircare:checked ~ .products .haircare {
+  display: block;
+}
+
+/* Filter buttons styling */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filter-buttons label {
+  background: #ff1493;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: inline-block;
+}
